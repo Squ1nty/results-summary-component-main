@@ -1,12 +1,24 @@
-let jsonArray;
-
-fetch('../../data.json')
-  .then(response => response.json())
-  .then(jsonArray);
-
-console.log(jsonArray);
+import { useState, useEffect } from 'react'
 
 function Component(){
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    async function fetchData(){
+      try{
+        const response = await fetch('/data.json');
+        const responseJSON = await response.json();
+
+        setData(responseJSON);
+      }
+      catch(error){
+        console.log("Error: " + error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return(
     <div className='flex flex-col max-w-[750px] lg:flex-row'>
       <div className='flex flex-col'>
@@ -18,7 +30,7 @@ function Component(){
         <p>Great</p>
         <p>You scored higher than 65% of the people who have taken these tests</p>
       </div>
-      <div></div>
+      <div>Data: {JSON.stringify(data)}</div>
     </div>
   );
 }
