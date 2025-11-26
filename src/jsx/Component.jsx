@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import SummaryDetails from './SummaryDetails';
 
 function Component(){
   const [data, setData] = useState(null);
@@ -30,7 +31,14 @@ function Component(){
         <p>Great</p>
         <p>You scored higher than 65% of the people who have taken these tests</p>
       </div>
-      <div>Data: {JSON.stringify(data)}</div>
+      <div className='w-full'>
+        <h2>Summary</h2>
+        <div className='w-full'>
+          {data && data.map(dataItem => (
+            <SummaryDetails category={dataItem.category} />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
