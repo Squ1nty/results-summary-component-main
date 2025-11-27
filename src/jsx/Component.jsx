@@ -3,6 +3,14 @@ import SummaryDetails from './SummaryDetails';
 
 function Component(){
   const [data, setData] = useState(null);
+  let avg = 0;
+
+  function getAverage(){
+    data && data.map(dataItem => {
+      avg += dataItem.score;
+    })
+    return JSON.stringify((avg/4).toFixed(0)).replaceAll(`"`, "");
+  }
 
   useEffect(() => {
     async function fetchData(){
@@ -25,7 +33,7 @@ function Component(){
       <div className='flex flex-col'>
         <h1>Your Result</h1>
         <div>
-          <p></p>
+          <p>{getAverage()}</p>
           <p>of 100</p>
         </div>
         <p>Great</p>
@@ -35,7 +43,7 @@ function Component(){
         <h2>Summary</h2>
         <div className='w-full'>
           {data && data.map(dataItem => (
-            <SummaryDetails category={dataItem.category} />
+            <SummaryDetails category={dataItem.category} key={dataItem.category} score={dataItem.score} icon={dataItem.icon} />
           ))}
         </div>
       </div>
