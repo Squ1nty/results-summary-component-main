@@ -5,7 +5,7 @@ import Component from './Component'
 
 function App() {
   return (
-    <div className="h-svh bg-[var(--pale-blue)]">
+    <div className="grid h-svh w-full bg-[var(--pale-blue)]">
       <Component />
       <Footer />
     </div>

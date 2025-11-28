@@ -1,6 +1,6 @@
 function Footer(){
   return(
-    <div className="text-base text-center bg-white p-5">
+    <div className="h-fit text-base text-center bg-white p-5">
       Challenge by <a style={{ color: 'hsl(228, 45%, 44%)' }} href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a style={{ color: 'hsl(228, 45%, 44%)' }} href="https://www.frontendmentor.io/profile/Squ1nty">Vincent Dao</a>.
     </div>

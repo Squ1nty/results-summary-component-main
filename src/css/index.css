@@ -18,6 +18,11 @@
   --green-teal: hsl(166, 100%, 37%);
   --cobalt-blue: hsl(234, 85%, 45%);
 
+  --light-red-bg: hsla(0, 100%, 67%, 0.1);
+  --orangey-yellow-bg: hsla(39, 100%, 56%, 0.1);
+  --green-teal-bg: hsla(166, 100%, 37%, 0.1);
+  --cobalt-blue-bg: hsla(234, 85%, 45%, 0.1);
+
   /* Gradients */
   --light-slate-blue: hsl(252, 100%, 67%);
   --light-royal-blue: hsl(241, 81%, 54%);
